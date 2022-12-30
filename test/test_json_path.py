@@ -47,6 +47,7 @@ def json_path_data3():
 
 def test_json_path(json_path_data1, json_path_data2, json_path_data3):
     assert json_path('person.[0].name', json_path_data1) == 'homie'
+    assert json_path('person.[1].name', json_path_data1) == 'bro'
     assert json_path('person.[*].name', json_path_data1) == ['homie', 'bro']
     assert json_path('[*].object', json_path_data2) == ['customer','bat']
     assert json_path('[*].[*].name', json_path_data3) == [['a','b'],['b','a'],['c','c']]
